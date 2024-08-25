@@ -1,0 +1,411 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin:0 ; 
+    padding:0;
+    box-sizing: border-box;
+    font-family: "Poppins" , sans-serif;
+}
+
+body{
+    min-width: 100vw;
+    height: 100vh;
+    background: #bdb6b6;
+display: grid;
+place-items: center;
+}
+.todo-container{
+    width: 1000px;
+    height:600px;
+    box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.651);
+    border-radius: 20px;
+    overflow: hidden;
+    background:#f2f2f2;
+    display: flex;
+}
+
+.sidebar-header ,.user-profile{
+    display: flex;
+    align-items: center;
+    gap:  21px;
+}
+.sidebar-header img {
+    width: 42px;
+    border-radius: 20px;
+}
+.user-profile img{
+ width: 42px;
+ border-radius: 50%;
+ box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.651);
+}
+
+.sidebar{
+    display: flex;
+    flex-direction: column;
+    position:relative;
+    height:600px;
+    width: 85px;
+    padding: 20px 22px;
+    background:  #6d7e7d;
+    transition: all 0.4s ease-in-out;
+    overflow-x: hidden;
+    flex-shrink: 0;
+    border-radius: 18px 0px 0px 18px;
+   z-index: 2;
+  
+}
+.sidebar-links li a span {
+    scale: 1.2;
+}
+.sidebar:hover{
+
+    width: 260px;
+    height: 600px;
+   
+}
+.sidebar-header h2,.user-profile h4{
+    font-size: 1.3rem;
+    white-space: nowrap;
+}
+.user-profile h3{
+    font-size: 1rem;
+}
+.user-profile span{
+    font-size: 0.775rem;
+    font-weight: 600;
+}
+.user-detail {
+    margin-left: 10px;
+    white-space: nowrap;
+
+}
+
+
+
+.sidebar-links li a {
+    display: flex;
+    align-items: center;
+    gap:0 18px;
+    font-size: 1.2rem;
+   border-radius: 8px;
+    margin: 10px ;
+    text-decoration:none;
+    padding: 10px 15px;
+    white-space: nowrap;
+    color:white;
+}
+.sidebar-links {
+    list-style:none;
+    margin-top: 20px;
+}
+.sidebar-links li a:hover{
+ background:  #5aa5a0da;
+}
+
+
+.user-account{
+    margin: auto;
+    padding: 12px 10px;
+    margin-left: -10px;
+}
+
+
+.main{
+    max-width: 895px;
+  flex-grow: 1;
+  z-index:1;
+  overflow-y: scroll;
+  overflow-x: hidden;
+position: relative;
+padding: 20px;
+
+
+}
+.search-bar{
+    display: flex;
+    gap: 0 20px;
+    flex-wrap: wrap;
+  
+    
+}
+.search-header{
+    box-sizing: border-box;
+    width: 915px;
+    margin: 20px;
+}
+.search-box{
+    width: 350px;
+    height: 40px;
+    border-radius: 8px;
+    padding: 4px;
+    font-size: 1rem;
+
+}
+.search-btn{
+    width:100px;
+    font-size: large;
+    border-radius: 6px;
+    border: 1px solid;
+}
+.add-task{
+    display: none;
+}
+.add-task h2{
+    display: block;
+}
+
+.task-form {
+ display: flex;
+flex-wrap: wrap;
+gap:1.2rem;
+margin: 20px;
+}
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 5px;
+    font-size: 1rem;
+    font-weight: 500;
+}
+.first-row{
+    flex-basis: 45%;
+}
+.second-row{
+    flex-basis: 92.1%;
+}
+.form-input {
+    padding: 8px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+    
+}
+
+.form-input:focus {
+    border-color: #6d7e7d;
+}
+
+.form-submit-btn {
+    padding: 8px 12px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: white;
+    background-color: #259110;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.form-submit-btn:hover {
+    background-color: #135505;
+}
+.form-submit-btn{
+display: flex;
+align-items: center;
+gap: 5px;
+}
+
+.task-list{
+    margin-top: 50px;
+    position:relative;
+    display: grid;
+    grid-template-columns: auto;
+    gap:20px 0px;
+}
+.task-list h2{
+    margin-bottom: 25px;
+  
+}
+.task-status{
+    display: flex;
+}
+.task-details span{
+    opacity: 0.8;
+}
+.task{
+   padding:10px 20px;
+   display: flex;
+   justify-content: space-between;
+   background: #ffffff;
+   gap: 25px;
+   align-items: center;
+   justify-items: end;
+   border-radius: 12px;
+   box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.575);
+}
+.task h3{
+    display: inline-block;
+    font-size:1.3rem;
+}
+.task span {
+    font-size: 0.9rem;
+    margin-left:10px;
+
+}
+.task-details{
+   grid-column: span 2;
+    height: auto;
+}
+.task-action-btn{
+    min-width: 220px;
+}
+
+#task-no{
+    display: none;
+}
+
+
+
+.edit-btn, .delete-btn ,.view-btn{
+    padding: 4px 8px;
+    margin-right: 5px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+.edit-btn {
+    background-color: #45b6aefd;
+    color: white;
+}
+.view-btn {
+    background-color: #02a11dda;
+    color: white;
+}
+
+.delete-btn {
+    background-color: #f44336;
+    color: white;
+}
+
+.edit-btn:hover {
+    background-color: #4e918b;
+}
+.view-btn:hover {
+    background-color: #02a11c;
+}
+
+.delete-btn:hover {
+    background-color: #e0312d;
+} 
+
+.circular-checkbox {
+    position: relative;
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+}
+
+ input[type="checkbox"] {
+ scale: 1.8; 
+ margin-right: 10px;
+ 
+
+}
+ input[type="checkbox"] :checked{
+    background-color: #02a11c;
+
+}
+
+.completed-task h3, .pending-task h3{
+  display: inline-block;
+}
+.completed-task , .pending-task {
+ padding: 6px 10px;
+ border-radius: 8px;
+ font-size: 0.9rem;
+}
+.pending-task{
+   background-color: orange;
+}
+.completed-task{
+   background-color: rgba(126, 233, 39, 0.897);
+}
+.completed-task span, .pending-task span{
+font-size: 1.3rem;
+font-weight: 600;
+}
+.task-status{
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+.task-list-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.filter-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+}
+
+.filter-container label {
+    font-size: rem;
+    font-weight: 500;
+}
+
+.filter-select {
+    padding: 8px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+}
+
+.filter-select:focus {
+    border-color: #6d7e7d;
+}
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
